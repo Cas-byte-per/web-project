@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="rus">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Мебельный магазин "Практика"</title>
+        <link rel="icon" type="image/png" href="/фавикон.png" />
+        <link rel="stylesheet" href="style_7.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"; rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1><p>Содержание</p></h1>
+            <!-- Скрытый чекбокс для управления гамбургер-меню -->
+            <input type="checkbox" class="menu-checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </label>
+            <nav>
+                <div class="notification">
+                    <div class="bell">
+                        <span class="badge">4</span>
+                    </div>
+                    <div class="notification-list">
+                        <ul id="notificationItems">
+                            <div class="item">
+                                Скидка 20% на новые коллекции мебели
+                                <button class="delete-btn">×</button>
+                            </div>
+                            <div class="item">
+                                Бесплатная доставка при заказе от 5000 рублей
+                                <button class="delete-btn">×</button>
+                            </div>
+                            <div class="item">
+                                Новинки в категории "Гостиные"
+                                <button class="delete-btn">×</button>
+                            </div>
+                            <div class="item">
+                                Эксклюзивные предложения для постоянных клиентов
+                                <button class="delete-btn">×</button>
+                            </div>
+                        </ul>
+                    </div>
+                </div>              
+                <ul>
+                    <li><a href="#top">Наверх</a></li>
+                    <li><a href="#about">Наши дизайнеры</a></li>
+                    <li><a href="#services">Адрес</a></li>
+                    <li><a href="form_7.html">Оставьте заявку</a></li>
+                    <li><a href="reg-form.html">Вход в личный кабинет</a></li>
+                </ul>
+                
+            </nav>
+        </header>
+        <div class = "container">
+            <main>
+                <div class="video-container">
+                    <video class="video" src="ad.mp4" autoplay loop muted></video>
+                    <div class="overlay">
+                        <h2>Добро пожаловать в <strong>Ваш Дом</strong></h2>
+                        <p>Создавайте уют с нашей мебелью. Дизайн, качество и комфорт — всё для вашего дома.</p>
+                    </div>
+                </div>
+                <div class="container1">
+                    <div class="section-a"><h1 id="top"><p>Каталог мебели</p></h1></div>
+                    <div class="section-b"><a href="детская/child.html"><h2>Детская</h2></a></div>
+                    <div class="section-c"><a href="ванная/bathroom.html"><h2>Ванная</h2></a></div>
+                    <div class="section-d"><a href="спальня/bedroom_7.html"><h2>Спальня</h2></a></div>
+                    <div class="section-e"><h2>Гардеробная</h2></div>
+                </div>
+                <section>
+                    <h1 id="about" class="about">
+                        <p>Наша мебель в ваших домах</p>
+                    </h1>
+                    <aside class="advertisement">
+                        <h2>Реклама</h2>
+                        <p>Специальное предложение! Скидка 50% на мебель до конца месяца!</p>
+                        <a href="#" class="advert-link">Узнать больше</a>
+                    </aside>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="стул_1.jpg" alt="Мебель 1">
+                            <button class="like-button">
+                                ❤ <span class="like-count">0</span>
+                            </button>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="кухня_2.jpg" alt="Мебель 2">
+                            <button class="like-button">
+                                ❤ <span class="like-count">0</span>
+                            </button>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="ванная_3.jpg" alt="Мебель 3">
+                            <button class="like-button">
+                                ❤ <span class="like-count">0</span>
+                            </button>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="зал_4.jpg" alt="Мебель 4">
+                            <button class="like-button">
+                                ❤ <span class="like-count">0</span>
+                            </button>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="детская_1.jfif" alt="Мебель 5">
+                            <button class="like-button">
+                                ❤ <span class="like-count">0</span>
+                            </button>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="зал_5.jpg" alt="Мебель 6">
+                            <button class="like-button">
+                                ❤ <span class="like-count">0</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>                
+                <div class="useinf">
+                    <div class="header-useinf" >
+                        <h1 class = "about"><p>Полезные советы</p></h1>
+                    </div>
+                    <div class="cards">
+                        <div class="card card-1">
+                            <div class="parallelogram-container">
+                            <div class="parallelogram"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Как правильно спланировать ремонт?</h2>
+                            <p>Создайте подробный план с поэтапными действиями, начиная с самого важного. Рассчитайте приблизительный бюджет, 
+                                учитывая возможные дополнительные расходы. Оставьте резерв в 10-15% от общей суммы на непредвиденные расходы.</p>
+                            <button>Подробнее</button>
+                        </div>
+                        </div>
+                        <div class="card card-2">
+                            <div class="parallelogram-container">
+                            <div class="parallelogram"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Как выбрать качественные материалы?</h2>
+                            <p>При выборе стройматериалов учитывайте их долговечность, безопасность и устойчивость к износу. Проконсультируйтесь со специалистами или почитайте отзывы, чтобы убедиться в качестве товара.</p>
+                            <button>Подробнее</button>
+                        </div>
+                    </div>
+                        <div class="card card-3">
+                            <div class="parallelogram-container">
+                            <div class="parallelogram"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Какие этапы ремонта нельзя пропускать?</h2>
+                            <p>Следование этапам ремонта поможет избежать переделок и лишних затрат. Начните с черновых работ: проводка, трубы, штукатурка, а затем переходите к чистовой отделке.</p>
+                            <button>Подробнее</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                    <h2  id="services">Наш офис на карте</h2>
+                    <!-- Встраивание карты Google Maps через iframe -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345096176!2d144.95373531589108!3d-37.8162793797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5773f3e7e18d469!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1619480813159!5m2!1sen!2sau" 
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+            </main>
+        </div>
+        <footer>
+            <address>
+                <h1 id="Top3"><p>Связь с нами</p></h1>
+                    <div class="social-media">
+                        <div class="social-buttons" class = "body">
+                            <a href="https://www.facebook.com" class="social-button facebook"></a>
+                            <a href="https://www.twitter.com" class="social-button twitter"></a>
+                            <a href="https://www.instagram.com" class="social-button instagram"></a>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </address>
+        </footer>
+        <script src="index.js"></script>
+    </body>
+</html>

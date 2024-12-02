@@ -1,0 +1,93 @@
+/* Основные стили для страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Стили для формы */
+form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для блоков формы */
+fieldset {
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Стили для заголовков fieldset */
+legend {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Стили для меток полей */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Стили для полей ввода, текстовых областей и выпадающих списков */
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+/* Стили для полей ввода, когда они в фокусе */
+input:focus, textarea:focus, select:focus {
+    border-color: #636FA4;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Стили для текста placeholder */
+::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Стили для кнопки отправки формы */
+button {
+    background-color: #636FA4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Стили для кнопки при наведении */
+button:hover {
+    background-color: #636FA4;
+}
+/* Стили для ссылки в виде кнопки */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:#636FA4; /* Цвет фона */
+    color: rgb(252, 152, 152); /* Цвет текста */
+    text-align: center;
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 5px; /* Скругленные углы */
+    border: 2px solid #636FA4;
+    transition: background-color 0.3s, color 0.3s; /* Анимация изменения цвета */
+    font-size: 16px;
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.back-button:hover {
+    background-color: #df9d85;
+    color: #e2d4cf;
+}

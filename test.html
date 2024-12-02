@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корзина - Сантехника</title>
+  <link rel="stylesheet" href="test.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Корзина для отдела сантехники</h1>
+    
+    <div class="product-list">
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Сифон">
+        <p>Товар 1: Сифон</p>
+        <p>Цена: 200 руб.</p>
+        <button class="add-to-cart" data-price="200" data-name="Сифон" data-img="https://via.placeholder.com/150">Добавить в корзину</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Смеситель">
+        <p>Товар 2: Смеситель</p>
+        <p>Цена: 450 руб.</p>
+        <button class="add-to-cart" data-price="450" data-name="Смеситель" data-img="https://via.placeholder.com/150">Добавить в корзину</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Трубопровод">
+        <p>Товар 3: Трубопровод</p>
+        <p>Цена: 350 руб.</p>
+        <button class="add-to-cart" data-price="350" data-name="Трубопровод" data-img="https://via.placeholder.com/150">Добавить в корзину</button>
+      </div>
+    </div>
+    
+    <div class="cart">
+      <h2>Ваша корзина</h2>
+      <p>Текущая сумма: <span id="cart-value">0</span> руб.</p>
+      <button id="checkout-button">Оформить заказ</button>
+      <button id="view-cart-button">Посмотреть корзину</button>
+      <div id="cart-content" class="cart-content"></div>
+    </div>
+  </div>
+
+  <script src="test.js"></script>
+</body>
+</html>

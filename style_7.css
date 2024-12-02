@@ -1,0 +1,708 @@
+/* Существующие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope";
+}
+a:link {
+    color: palevioletred;
+}
+a:hover {
+    color: aquamarine;
+}
+h1 {
+    font-family: "Manrope";
+    font-size: 25px;
+}
+h2 {
+    font-family: "Manrope";
+    font-size: 15px;
+}
+body{
+    background-color: rgba(253, 240, 225, 0.616);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5%;
+    background-color: #E8CBC0;
+    position: sticky;
+    top: 0;
+    border-radius: 10px;
+    opacity: 85%;
+    z-index: 10;
+    font-family: "Manrope";
+    height: 100px;
+    white-space: nowrap;
+}
+.video-container {
+    position: relative;
+    width: 100vw;  /* Видео будет растянуто на всю ширину окна браузера */
+    height: 400px; /* Высота равна 100% высоты окна браузера */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video {
+    width: 100%;           /* Видео занимает всю ширину страницы */
+    height: 100%;          /* Видео также растягивается по высоте */
+    object-fit: cover;     /* Видео масштабируется по контейнеру, сохраняя пропорции */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    color: white;
+    transition: opacity 0.5s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 1rem;
+}
+
+.video-container:hover .overlay {
+    opacity: 1;
+}
+.menu-checkbox {
+    display: none;
+}
+
+/* Иконка меню-бургера */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Добавляем отступы для большего пространства */
+    background-color: #E8CBC0; /* Задаем цвет фона для лучшей видимости */
+    border-radius: 5px; 
+}
+
+.menu-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #636FA4;
+    margin: 8% 10%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+/* Горизонтальное меню для десктопа */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #636FA4;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #636FA4;
+    color: #fff;
+    border-radius: 5px;
+}
+.notification {
+    position: relative;
+    display: inline-block;
+}
+
+.bell {
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.badge {
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 12px;
+}
+
+.notification-list {
+    white-space: nowrap;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #636FA4;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    width: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* По умолчанию скрыто */
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 2px 6px;
+    transition: background 0.3s;
+}
+.delete-btn:hover {
+    background: #c0392b;
+}
+.notification-list ul {
+    display: inline;
+}
+.notification:hover .notification-list {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 135px;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        background-color: #E8CBC0;
+        flex-direction: column;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 10;
+        border-radius: 50px; 
+    }
+
+    /* Показать меню, когда чекбокс активен */
+    .menu-checkbox:checked ~ nav {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Анимация для гамбургер-меню */
+    .menu-checkbox:checked + .menu-icon .menu-bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-checkbox:checked + .menu-icon .menu-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-checkbox:checked + .menu-icon .menu-bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Flexbox контейнер */
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+}
+
+.section-a{
+    min-height: 100px;
+    border: 2px solid #636FA4;
+    background-color: #E8CBC0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 20px;
+}
+/* Общие стили для секций */
+.section-b, .section-c, .section-d, .section-e {
+    min-height: 100px;
+    background-color: #636FA4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+/* Стили для настольного устройства */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+    .section-a {
+        flex: 1 1 100%;
+    }
+    .section-b {
+        flex: 1 1 48%;
+    }
+    .section-c {
+        flex: 1 1 48%;
+    }
+    .section-d {
+        flex: 1 1 48%;
+    }
+    .section-e {
+        flex: 1 1 48%;
+    }
+}
+
+/* Стили для мобильного устройства */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+    .section-a {
+        order: 1;
+        flex-basis: 100%;
+    }
+    .section-b {
+        order: 2;
+        flex-basis: 100%;
+    }
+    .section-e {
+        order: 3;
+        flex-basis: 100%;
+    }
+    .section-c {
+        order: 4;
+        flex-basis: 100%;
+    }
+    .section-d {
+        order: 5;
+        flex-basis: 100%;
+    }
+}
+
+
+
+main > section > aside {
+    width: 150px;
+    height: 150px;
+    box-sizing: content-box;
+}
+.about {
+    text-align: center;
+    padding: 20px;
+    background-color: #E8CBC0;
+    border: 2px solid #636FA4;
+    border-radius: 10px; /* Цвет заголовка */
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.gallery-item {
+    margin: 10px;
+    flex: 1 1 calc(33% - 20px); /* Для десктопа: 3 изображения в ряд */
+    position: relative;
+    overflow: hidden; /* Для обрезки изображений */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тень */
+    transition: transform 0.3s; /* Анимация при наведении */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+.gallery-item img {
+    width: 100%; /* Ширина изображения */
+    height: auto; /* Высота под изображение */
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 20px); /* Для планшетов: 2 изображения в ряд */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 100%; /* Для мобильных: 1 изображение в ряд */
+    }
+}
+.like-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #777;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.like-button .like-count {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.like-button:hover {
+    color: #ff4081;
+}
+
+.like-button.liked {
+    color: #ff4081;
+}
+.cursor-element {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+/* Float для aside */
+.advertisement {
+    background-color: #fffae6; /* Светло-желтый фон */
+    border: 2px solid #ffcc00; /* Рамка */
+    padding: 20px; /* Внутренние отступы */
+    margin: 20px 0; /* Внешние отступы */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    width: 300px; /* Ширина блока */
+    height: 500px; /* Высота блока */
+    position: relative; /* Относительное позиционирование */
+    float: right; /* Позиционирование справа */
+    z-index: 5;
+}
+
+.advertisement h2 {
+    font-size: 1.5em; /* Размер шрифта заголовка */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.advertisement p {
+    font-size: 1em; /* Размер шрифта параграфа */
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
+.advert-link {
+    display: inline-block; /* Включение блочного отображения */
+    padding: 10px 15px; /* Внутренние отступы */
+    background-color: #ffcc00; /* Фон для ссылки */
+    color: #333; /* Цвет текста ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 5px; /* Скругление углов */
+}
+
+.advert-link:hover {
+    background-color: #e6b800; /* Цвет фона при наведении */
+    color: #fff; /* Цвет текста при наведении */
+}
+ /* Контейнер для карточек */
+.useinf{
+    display: flex;
+    margin-left: 50px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+}
+.header-useinf h1 {
+    display: flex;
+    text-align: center;
+}
+.cards {
+    display: flex;
+    gap: 50px; /* Увеличенное расстояние между карточками */
+    margin-left: 10%;
+}
+
+  /* Основной стиль для карточки */
+.card {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    overflow: visible; /* Позволяет параллелограмму выходить за пределы */
+    transition: transform 0.3s;
+}
+
+  /* Контейнер для параллелограмма */
+.parallelogram-container {
+    position: absolute;
+    top: -40px;
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+    width: 200px; /* Уменьшенная ширина для узкого эффекта */
+    height: calc(100% + 80px); /* Высота, чтобы перекрыть карточку */
+    overflow: visible; /* Не обрезаем параллелограмм */
+    z-index: 0;
+}
+
+  /* Яркие градиенты для каждой карточки */
+.card-1 .parallelogram {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fa3163, #c2e8f5); /* Яркий розовый и насыщенный голубой */
+    transform: skew(-20deg);
+    border-radius: 15px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.card-2 .parallelogram {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6d99, #4cb8e4); /* Яркий малиновый и яркий синий */
+    transform: skew(-20deg);
+    border-radius: 15px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.card-3 .parallelogram {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff8ab8, #3aaedf); /* Насыщенный розовый и темно-голубой */
+    transform: skew(-20deg);
+    border-radius: 15px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+  /* Прямоугольник с текстом */
+.card-content {
+    position: relative;
+    background: rgba(255, 176, 219, 0.418);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+    z-index: 1; /* Поверх параллелограмма */
+    margin: 20px;
+}
+
+.card-content h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.card-content p {
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+.card-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff5f6d;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-content button:hover {
+    background-color: #ffc371;
+}
+
+  /* Эффект при наведении */
+.card:hover .parallelogram {
+    transform: skew(0deg); /* Превращение параллелограмма в прямоугольник */
+    filter: brightness(1.2); /* Увеличение яркости для выделения */
+}
+
+.card-1:hover .parallelogram {
+    background: linear-gradient(135deg, #fa3163, #c2e8f5);
+}
+
+.card-2:hover .parallelogram {
+    background: linear-gradient(135deg, #ff6d99, #4cb8e4);
+}
+
+.card-3:hover .parallelogram {
+    background: linear-gradient(135deg, #ff8ab8, #3aaedf);
+}
+
+  /* Прозрачные квадраты по краям */
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background:  rgba(255, 176, 219, 0.418);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+  /* Позиционирование квадратов */
+.card::before {
+    top: 10px;
+    left: 10px;
+}
+
+.card::after {
+    bottom: 10px;
+    right: 10px;
+}
+
+  /* Анимация квадратов при наведении */
+.card:hover::before {
+    opacity: 1;
+    transform: translate(-10px, -10px); /* Плавное перемещение к центру */
+}
+
+.card:hover::after {
+    opacity: 1;
+    transform: translate(10px, 10px); /* Плавное перемещение к центру */
+}
+footer {
+    position: relative;
+    background-color: #636FA4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+#Top3 {
+    color: antiquewhite;
+}
+.social-buttons {
+    display: flex;
+    gap: 20px;
+    padding-top: 5px;
+    justify-content: center;
+    width: 100%;
+
+}
+
+  /* Базовый стиль для кнопок */
+  .social-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    color: #636FA4;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ffffff;
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  /* Псевдоэлемент для эффекта заполнения */
+  .social-button::before {
+    content: '';
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #67aeff, #d4a5c8);
+    transition: all 1s ease-in-out;
+    z-index: 1;
+    border-radius: 50%;
+  }
+  
+  /* Текст для каждой кнопки через псевдоэлемент */
+  .facebook::after {
+    content: 'Facebook';
+    position: absolute;
+    color: #636FA4;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .twitter::after {
+    content: 'Twitter';
+    position: absolute;
+    color: #636FA4;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .instagram::after {
+    content: 'Instagram';
+    position: absolute;
+    color: #636FA4;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  /* Анимация заполнения при наведении */
+  .social-button:hover::before {
+    bottom: 0;
+  }
+  
+  .social-button:hover {
+    color: #fff;
+  }

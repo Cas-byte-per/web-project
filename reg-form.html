@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Мебельный магазин "Практика"</title>
+        <link rel="icon" type="image/png" href="/фавикон.png" />
+        <link rel="stylesheet" href="reg-form.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"; rel="stylesheet">
+</head>
+<body>
+
+<div class="background">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+</div>
+<div class="form-container">
+    <h2>Регистрация</h2>
+    <form id="registrationForm" action="#" method="POST">
+        <label for="username">Логин</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Почта</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" required>
+
+        <div id="captchaContainer">
+            <p id="captchaText"></p>
+            <input type="text" id="captchaInput" placeholder="Введите капчу" required>
+            <p id="errorMessage" class="error hidden">Неправильный ввод! Попробуйте снова.</p>
+        </div>
+
+        <button id="submitButton" type="submit" disabled>Зарегистрироваться</button>
+    </form>
+
+    <button class="back-button" onclick="window.location.href='index_7.html'">Вернуться на основную страницу</button>
+    <button id="login-btn" disabled>Войти</button>
+    <div id="message" class="message"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
