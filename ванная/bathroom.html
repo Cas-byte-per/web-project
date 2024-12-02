@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="rus">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Мебельный магазин "Практика"</title>
+        <link rel="icon" type="image/png" href="/фавикон.png" />
+        <link rel="stylesheet" href="bathroom.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"; rel="stylesheet">
+    </head>
+    <header>
+        <h1><p>Сантехника</p></h1>
+        <!-- Скрытый чекбокс для управления гамбургер-меню -->
+        <input type="checkbox" class="menu-checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+        </label>
+        <nav>
+            <div class="notification">
+                <div class="bell">
+                    <span class="badge">4</span>
+                </div>
+                <div class="notification-list">
+                    <ul>
+                        <div class="item">Скидка 20% на новые коллекции мебели</div>
+                        <div class="item">Бесплатная доставка при заказе от 5000 рублей</div>
+                        <div class="item">Новинки в категории "Гостиные"</div>
+                        <div class="item">Эксклюзивные предложения для постоянных клиентов</div>
+                    </ul>
+                </div>
+            </div> 
+            <ul>
+                <li><a href="#top">Наверх</a></li>
+                <li><a href="form_7.html">Оставьте заявку</a></li>
+                <li><a href="reg-form.html">Вход в личный кабинет</a></li>
+                <li><a href="/index_7.html">Домой</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+<body>
+    <div class="container">
+        <h1>Корзина для отдела сантехники</h1>
+
+        <div class="sort-controls">
+            <button id="sort-asc">Сортировать по возрастанию цены</button>
+            <button id="sort-desc">Сортировать по убыванию цены</button>
+        </div>
+
+        <div class="filter">
+            <h3>Фильтр по цене</h3>
+            <label for="min-price">Мин. цена:</label>
+            <input type="number" id="min-price" placeholder="Например, 100">
+            <label for="max-price">Макс. цена:</label>
+            <input type="number" id="max-price" placeholder="Например, 500">
+            <button onclick="applyFilter()">Применить фильтр</button>
+        </div>
+
+        <div id="filter-result" class="filter-result"></div>
+
+        <div class="product-list">
+            <div class="product" id="product1" draggable="true" data-price="200" data-name="Сифон" data-img="сифон.jpg">
+                <img src="сифон.jpg" alt="Сифон">
+                <p>Товар 1: Сифон</p>
+                <p>Цена: 200 руб.</p>
+                <button class="add-to-cart" data-price="200" data-name="Сифон" data-img="сифон.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product2" draggable="true" data-price="450" data-name="Смеситель" data-img="смеситель.jpg">
+                <img src="смеситель.jpg" alt="Смеситель">
+                <p>Товар 2: Смеситель</p>
+                <p>Цена: 450 руб.</p>
+                <button class="add-to-cart" data-price="450" data-name="Смеситель" data-img="смеситель.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product3" draggable="true" data-price="1350" data-name="Держатель для полотенцев" data-img="держатель для полотенец.jpg">
+                <img src="держатель для полотенец.jpg" alt="Держатель для полотенец">
+                <p>Товар 3: Держатель для полотенец</p>
+                <p>Цена: 1350 руб.</p>
+                <button class="add-to-cart" data-price="1350" data-name="Держатель для полотенец" data-img="держатель для полотенец.jpg">Добавить в корзину</button>
+            </div>
+        </div>
+
+        <div class="cart" id="cart" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Ваша корзина</h2>
+            <!-- Кнопка для оформления заказа -->
+            <button id="checkout-button">Оформить заказ</button>
+
+            <!-- Кнопка для просмотра корзины -->
+            <button id="view-cart-button">Просмотреть корзину</button>
+
+            <!-- Контейнер для отображения корзины -->
+            <div id="cart-content" class="cart-content"></div>
+
+            <!-- Сумма корзины -->
+            <p>Текущая сумма: <span id="cart-value">0</span> руб.</p>
+        </div>
+    </div>
+    <footer>
+        <address>
+            <h1 id="Top3"><p>Связь с нами</p></h1>
+                <div class="social-media">
+                    <div class="social-buttons" class = "body">
+                        <a href="https://www.facebook.com" class="social-button facebook"></a>
+                        <a href="https://www.twitter.com" class="social-button twitter"></a>
+                        <a href="https://www.instagram.com" class="social-button instagram"></a>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </address>
+    </footer>
+    <script src="bathroom.js"></script>
+</body>
+</html>

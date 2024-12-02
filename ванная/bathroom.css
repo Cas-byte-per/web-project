@@ -1,0 +1,384 @@
+*{
+    font-family: "Manrope";
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5%;
+    background-color: #E8CBC0;
+    position: sticky;
+    top: 0;
+    border-radius: 10px;
+    opacity: 85%;
+    z-index: 10;
+    font-family: "Manrope";
+    white-space: nowrap;
+    height: 100px;
+}
+
+.menu-checkbox {
+    display: none;
+}
+
+/* Иконка меню-бургера */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Добавляем отступы для большего пространства */
+    background-color: #E8CBC0; /* Задаем цвет фона для лучшей видимости */
+    border-radius: 5px; 
+}
+
+.menu-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #636FA4;
+    margin: 8% 10%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+/* Горизонтальное меню для десктопа */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #636FA4;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #636FA4;
+    color: #fff;
+    border-radius: 5px;
+}
+.notification {
+    position: relative;
+    display: inline-block;
+}
+
+.bell {
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.badge {
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 12px;
+}
+
+.notification-list {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #636FA4;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, transform 0.3s;
+    display: none;
+}
+
+.notification:hover .notification-list {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 135px;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        background-color: #E8CBC0;
+        flex-direction: column;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 10;
+        border-radius: 50px; 
+    }
+
+    /* Показать меню, когда чекбокс активен */
+    .menu-checkbox:checked ~ nav {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Анимация для гамбургер-меню */
+    .menu-checkbox:checked + .menu-icon .menu-bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-checkbox:checked + .menu-icon .menu-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-checkbox:checked + .menu-icon .menu-bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+    }
+}
+.container {
+width: 80%;
+margin: 0 auto;
+padding-top: 20px;
+}
+
+h1 {
+text-align: center;
+font-size: 24px;
+margin-bottom: 30px;
+}
+
+.filter {
+margin-bottom: 20px;
+padding: 10px;
+background-color: #f8f9fa;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+.sort-controls {
+margin-bottom: 20px;
+}
+.sort-controls button {
+margin-right: 10px;
+padding: 10px 15px;
+background-color: #636FA4;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.sort-controls button:hover {
+background-color: #E8CBC0;
+}
+.product-list {
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.product {
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 15px;
+width: 300px;
+text-align: center;
+}
+
+.product img {
+max-width: 100%;
+height: auto;
+margin-bottom: 10px;
+}
+
+.product button {
+background-color: #636FA4;
+color: white;
+border: none;
+padding: 10px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.product button:hover {
+background-color: #E8CBC0;
+}
+
+.filter-result {
+margin-top: 10px;
+padding: 10px;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+.cart {
+background-color: #fff;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+text-align: center;
+}
+
+#checkout-button, #view-cart-button {
+background-color: #E8CBC0;
+}
+
+#checkout-button:hover, #view-cart-button:hover {
+background-color: #E8CBC0;
+}
+
+.cart-content {
+margin-top: 20px;
+text-align: left;
+display: none;
+}
+
+.cart-content ul {
+list-style: none;
+padding: 0;
+}
+
+.cart-content li {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.cart-content img {
+width: 50px;
+height: 50px;
+margin-right: 10px;
+}
+
+.cart-content button {
+background-color: #636FA4;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin: 0 5px; /* Добавляет отступы между кнопками */
+padding: 5px 10px;
+}
+
+.cart-content button:hover {
+background-color: #d4a5c8;
+}
+footer {
+    margin-top: 50%; /* Фиксируем футер внизу */
+    position: relative;
+    display: flex;
+    background-color: #636FA4;
+    width: 99%;
+    border-radius: 10px;
+    text-align: center;
+    bottom: 0px;
+    justify-content: center;
+}
+#Top3 {
+    color: antiquewhite;
+}
+.social-buttons {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 1%;
+    justify-content: center;
+    width: 100%;
+}
+.social-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    color: #636FA4;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ffffff;
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+}
+
+  /* Псевдоэлемент для эффекта заполнения */
+.social-button::before {
+    content: '';
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #67aeff, #d4a5c8);
+    transition: all 1s ease-in-out;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+  /* Текст для каждой кнопки через псевдоэлемент */
+.facebook::after {
+    content: 'Facebook';
+    position: absolute;
+    color: #636FA4;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.twitter::after {
+    content: 'Twitter';
+    position: absolute;
+    color: #636FA4;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.instagram::after {
+    content: 'Instagram';
+    position: absolute;
+    color: #636FA4;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+  /* Анимация заполнения при наведении */
+.social-button:hover::before {
+    bottom: 0;
+}
+
+.social-button:hover {
+    color: #fff;
+}
